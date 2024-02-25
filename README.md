@@ -40,7 +40,7 @@ To enhance the security and flexibility of your application, it's a best practic
 ### Step 1: Create a Mongo Collection for this application
 
 1. Navigate to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) log in.
-2. Create a new datbase called `userapi`
+2. Click on collections and create a new database called `userapi`
 
 ![Image showing mongodb.com creating a new database](Images/1.png)
 
@@ -170,9 +170,10 @@ dotenv.config();
 // Connect to DB
 mongoose.connect(
   process.env.MONGO_URI,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => console.log("connected to db!")
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
+// Middleware
+app.use(express.json());
 // Route middlewares
 app.use("/api/user", authRoute);
 app.listen(3000, () => console.log("Server is up and running"));
@@ -335,7 +336,7 @@ Here is the full `authRoutes.js` file up to this point:
 
 ```javascript
 const router = require("express").Router();
-const User = require("../model/User");
+const User = require("../models/User");
 const { registerValidation, loginValidation } = require("./validation");
 router.post("/register", async (req, res) => {
   // Validate data before we create a user
@@ -386,14 +387,11 @@ router.post("/register", async (req, res) => {
   // Check if the user is already in the database
   const emailExist = await User.findOne({ email: req.body.email });
   if (emailExist) return res.status(400).send("Email already exists");
-  // Hash the password
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(req.body.password, salt);
   // Create a new user
   const user = new User({
     name: req.body.name,
     email: req.body.email,
-    password: hashedPassword,
+    password: req.body.password,
   });
   // Save the user
   try {
@@ -426,7 +424,7 @@ npm install bcrypt
 Import the bcrypt package at the top of `authRoutes.js`:
 
 ```javascript
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 ```
 
 Generate a salt, then hash the password with the salt:
@@ -644,8 +642,7 @@ const authRoute = require("./routes/authRoutes");
 const postRoute = require("./routes/postsRoutes");
 dotenv.config();
 // Connect to DB
-mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () =>
-  console.log("connected to db!")
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }
 );
 // Middleware
 app.use(express.json());

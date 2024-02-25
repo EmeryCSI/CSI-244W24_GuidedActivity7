@@ -13,6 +13,12 @@ This repository is a part of CSI-244 at Renton Technical College.
 
 ## Guided Activity 7 User Authentication API
 
+### This tutorial is adapted from: 
+
+O, L. (2022, July 8). How to Build an Authentication API with Node.js, MongoDB, and JWT. Medium; Medium. https://medium.com/@olills/how-to-build-a-node-js-api-server-with-jwt-authentication-113fa55708d7
+
+‌
+
 ### In this tutorial you will be creating a RESTful API for user Authentication.
 
 1. Clone this repository to your machine.

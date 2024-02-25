@@ -9,35 +9,18 @@
 
 This repository is a part of CSI-244 at Renton Technical College.
 
-## Guided Activity 6 Mongoose, MVC and Rest API
+## Guided Activity 7 User Authentication API
 
 1. Clone this repository to your machine.
 2. Open the repository in Visual Studio code.
 3. Follow the instructions to create a RESTful API using mongoose and MVC
 
-# Express Mongoose MVC
-
-## What is MVC?
-
-# Express Mongoose MVC Tutorial
-
-Welcome to this comprehensive guide on building a backend for a web application using the Model-View-Controller (MVC) architectural pattern with Node.js, Express, MongoDB, and Mongoose. By the end of this tutorial, you will have a clear understanding of how to implement a CRUD (Create, Read, Update, Delete) application. Let's dive into the world of web development with MVC, and create a Songs Management application.
-
-## What is MVC?
-
-MVC stands for Model-View-Controller, a design pattern that helps in organizing code in a way that separates the application's concerns into three interconnected components:
-
-1. **Model**: Represents the data structure, business logic, and manages interactions with the database. We'll use MongoDB for data storage.
-2. **View**: Handles the presentation layer for the user. Although we'll focus on the backend, the View would be what the users interact with.
-3. **Controller**: Acts as a bridge between the Model and the View, managing user input, business logic, and updates to the model.
-
 ## Setting up the Environment
 
-First, ensure Node.js and MongoDB are installed on your machine. Then, set up your project:
 
 ```bash
-mkdir my-api
-cd my-api
+mkdir user-api
+cd user-api
 npm init -y
 npm install express mongoose cors
 ```
@@ -47,6 +30,10 @@ npm install express mongoose cors
 To enhance the security and flexibility of your application, it's a best practice to move sensitive information, such as your database connection string, into environment variables. This can be achieved using a `.env` file in your Node.js project. Here's how to set it up:
 
 ## Navigate to Mongodb.com, Create a new collection called
+
+### Step 1: Create a Mongo Collection for this application
+
+
 
 ### Step 1: Install dotenv Package
 

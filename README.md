@@ -44,7 +44,7 @@ To enhance the security and flexibility of your application, it's a best practic
 
 ![Image showing mongodb.com creating a new database](Images/1.png)
 
-3. Create a new collection called `users`
+3. Create a new collection called `user`
 
 ![Image showing mongodb.com creating a new collection](Images/2.png)
 

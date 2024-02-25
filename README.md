@@ -169,7 +169,7 @@ const authRoute = require("./routes/auth");
 dotenv.config();
 // Connect to DB
 mongoose.connect(
-  process.env.DB_CONNECT,
+  process.env.MONGO_URI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("connected to db!")
 );
@@ -180,7 +180,7 @@ app.listen(3000, () => console.log("Server is up and running"));
 
 Here, we require the mongoose and dotenv packages at the top of the file.
 
-We initiate `dotenv.config()` and use `mongoose.connect()` to connect to the database, passing in the connection string via the `DB_CONNECT` environment variable.
+We initiate `dotenv.config()` and use `mongoose.connect()` to connect to the database, passing in the connection string via the `MONGO_URI` environment variable.
 
 You might get a message in your console that reads:
 

@@ -165,7 +165,7 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 // Import routes
-const authRoute = require("./routes/auth");
+const authRoute = require("./routes/authRoutes");
 dotenv.config();
 // Connect to DB
 mongoose.connect(

@@ -7,6 +7,8 @@
     <h3 align="center">Guided Activity 7</h3>
 </div>
 
+
+
 This repository is a part of CSI-244 at Renton Technical College.
 
 ## Guided Activity 7 User Authentication API

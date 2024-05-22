@@ -71,6 +71,15 @@ MONGO_URI=YOUR_CONNECTION_STRING_HERE
 TOKEN_SECRET=YOUR_RANDOM_SECRET_KEY_HERE
 ```
 
+Notice that the connection string specifies a specific database. The userapi. If you would like for your application to use a specific database you can add it directly in the connection string after the base address but before the url parameters.
+
+The token secret will be used to encrypt user passwords. It is important that you keep this token secret secure, if your token secret becomes exposed then attackers will be able to decrypt your user passwords if they get access to the database.
+
+```env
+mongodb+srv://<username>:<password>@cluster0.server.mongodb.net/userapi?retryWrites=true&w=majority&appName=Cluster0
+TOKEN_SECRET=jh129837123
+```
+
 Replace `YOUR_CONNECTION_STRING_HERE` with your actual MongoDB connection string and `YOUR_RANDOM_SECRET_KEY_HERE` with a randomly generated secret key.
 
 ### Step 4: Ensure .env is in Your .gitignore
